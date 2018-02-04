@@ -6,6 +6,18 @@ import doctest
 
 '''This module contains tools to run simulations.'''
 
+def quick_test(mu, p, graphs):
+    '''Return graphs that minimize expected number of infected nodes for
+    given mu and p.'''
+    lowest = 1
+    for graph in graphs:
+        exp_val = i.compute_infected_nodes(mu, p, graph)
+        if exp_val < lowest:
+            lowest = exp_val
+            lowest_edges = graph.edges()
+    result = (lowest_edges, lowest)
+    print(result)
+
 def simulation(graphs, granularity = 'low'):
     '''Return graphs that minimize the expected number of infected nodes
     in the independent cascade model under parameters mu = p = .1, .5, .9

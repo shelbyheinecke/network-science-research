@@ -2,7 +2,6 @@ import networkx as nx
 import itertools as it
 import time
 import random
-import multiprocessing
 import doctest
 
 '''This module provides tools for computing the expected number of infected
@@ -52,7 +51,7 @@ def compute_infected_nodes(mu, p, graph):
 
 def prob_connected_comp_size(subgraphs_powerset, nodes, original_num_edges, p):
     '''Return dictionary with KEY each node and VALUE a list indicating
-    the probability that the node is contained in a component size of 
+    the probability that the node is contained in a component size of
     1 to len(nodes).
     '''
     nodes_and_connected_components = {}
@@ -76,6 +75,7 @@ def prob_connected_comp_size(subgraphs_powerset, nodes, original_num_edges, p):
         new_graph.remove_edges_from(new_edges)
 
     return nodes_and_connected_components
+
 
 if __name__ == "__main__":
     doctest.testmod()
