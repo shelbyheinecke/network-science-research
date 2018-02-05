@@ -1,6 +1,5 @@
 import IndependentCascadeTools as i
 import GenerateGraphs as g
-import pandas as pd
 import itertools as it
 import doctest
 

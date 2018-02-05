@@ -7,9 +7,10 @@ import doctest
 '''This module provides tools for computing the expected number of infected
 nodes in the independent cascade model of infection.'''
 
-#CREDIT: Stackoverflow, contributed by user hughdbrown.
+
 def powerset(s):
-    '''Return the set of all subsets of set s.'''
+    '''Return the set of all subsets of set s.
+    Credit for this method: Stackoverflow, user hughdbrown.'''
     x = len(s)
     masks = [1 << i for i in range(x)]
     for i in range(1 << x):
